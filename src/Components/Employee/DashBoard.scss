@@ -1,30 +1,35 @@
 
-.body{
-    margin: auto;
-    height: 500px;
-    align-items: center;
-    margin-top: 50px;
-    width: 50%;
-    padding: 20px;
-    max-width: 400px;
-    grid-gap: 10px;
-    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
-    border-radius: 2px solid;
-    background-color: rgb(109, 207, 122);
-}
-.title {
-    font-size: 30px;
-}
+#Employee {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    width: 100%;
+    font-size:20px;
+  }
+  
+  #Employee td, #Employee th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size:20px;
+  }
 
-.button {
-    font-size: 30px;
-    padding: 10px 65px;
-    border: 2px;
-    margin: 3px;
+   .employeebtn {
+    margin-left: 10px;
+    padding-top: 10px;
     align-items: center;
     
-    &:focus {
-      outline: none;
-    }
-    
+  }
+  
+  #Employee tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #Employee tr:hover {background-color: #ddd;}
+  
+  #Employee th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color:white;
+    color: black;
+    font-size:20px;
   }

@@ -1,74 +1,100 @@
 import React from "react";
 import "./Register.scss";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import { Grid } from "@material-ui/core";
 
 
 export class Register extends React.Component {
-  constructor(props) {
-    super(props);
-     this.state={
-      EmployeeName:'',
-      Username:'',
-      Password:'',
-      Gender:'',
-      City:'',
-      EmailID:'',
-      Designation:'',
-      WorkingExperience:''
-    }
-  }
-  
-  handleChange= (e)=> { 
-    console.log(e.target.value);
-     
-    this.setState({[e.target.name]:e.target.value});  
-    console.log(this.state);
-    
-  }  
-
-  register=(e) => {
-    e.preventDefault();
-    console.log(this.state);
-    let requestData ={
-      EmployeeName:this.state.EmployeeName,
-      Username:this.state.Username,
-      Password:this.state.Password,
-      Gender:this.state.Gender,
-      City:this.state.City,
-      EmailID:this.state.EmailID,
-      Designation:this.state.Designation,
-      WorkingExperience:this.state.WorkingExperience
-    }
-    
-  }
   render() 
   {
     return (
-        <div className="logo">
-            <div class="login-box"  align="center">
-                <h1>Register</h1>
-                    <form>
-                        <p>Employee Name</p>
-                            <input type="text" name="EmployeeName" onChange={this.handleChange} value={this.state.EmployeeName} placeholder="Enter Employee Name" />
-                        <p>Username</p>
-                            <input type="text" name="Username" onChange={this.handleChange} value={this.state.Username} placeholder="Enter Username" />
-                        <p>Password</p>
-                            <input type="Password" name="Password" onChange={this.handleChange} value={this.state.Password} placeholder="Enter Password" />
-                        <p>Gender</p>
-                            <input type="text" name="Gender" onChange={this.handleChange} value={this.state.Gender} placeholder="Enter Gender" />
-                        <p>City</p>
-                            <input type="text" name="City" onChange={this.handleChange} value={this.state.City} placeholder="Enter City" />
-                        <p>EmailID</p>
-                            <input type="text" name="EmailID" onChange={this.handleChange} value={this.state.EmailID} placeholder="Enter Email Address" />
-                        <p>Designation</p>
-                            <input type="text" name="Designation" onChange={this.handleChange} value={this.state.Designation} placeholder="Enter Designation" />
-                        <p>WorkingExperience</p>
-                            <input type="text" name="WorkingExperience" onChange={this.handleChange} value={this.state.WorkingExperience} placeholder="Enter Working Experience" />
-                        <div className="footer" align="center">
-                            <button type="button" onClick={this.register} className="btn btn-success">Register</button>
-                        </div>
-                    </form>
+        
+        <form id="form">
+            <p class="title" align="center">
+                <Typography component="h1" variant="h5">
+                 SignUp
+                </Typography>
+            </p>
+        <div className="text">
+           <TextField 
+           name="FirstName" 
+           type="FirstName" 
+           label="FirstName" 
+           variant="outlined" 
+           required/>
+
+           <TextField 
+           name="LastName" 
+           type="LastName" 
+           label="LastName" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1" width="346">
+           <TextField 
+           name="MobileNo" 
+           type="MobileNo" 
+           label="MobileNo" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1">
+           <TextField 
+           name="Email" 
+           type="Email" 
+           label="Email" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1">
+           <TextField 
+           name="Password" 
+           type="Password" 
+           label="Password" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1">
+           <TextField 
+           name="City" 
+           type="City" 
+           label="City" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1">
+           <TextField 
+           name="Department" 
+           type="Department" 
+           label="Department" 
+           variant="outlined" 
+           required/>
+        </div>
+        <div className="text1">
+           <TextField 
+           name="Salary" 
+           type="salary" 
+           label="Salary" 
+           variant="outlined" 
+           required/>
+        </div>
+
+        
+        <Grid item xs={12} className="footers">
+                <div className="btn">
+                    <Button 
+                        variant="contained" 
+                        color="primary" onClick={this.login} 
+                        className="btn">
+                        SignUp
+                    </Button>
                 </div>
-            </div>
+            </Grid>
+        </form>
+       
         );
     }
 }

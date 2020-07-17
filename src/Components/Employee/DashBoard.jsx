@@ -35,11 +35,8 @@ render()
                 <TableCell align="right" >Last Name</TableCell>  
                 <TableCell align="right" >MobileNo</TableCell>  
                 <TableCell align="right" >Email Id</TableCell>  
-                <TableCell align="right" >City</TableCell>  
                 <TableCell align="right" >Department</TableCell>  
-                <TableCell align="right" >Salary</TableCell>
-                <TableCell align="right" >Update</TableCell> 
-                <TableCell align="right" >Delete</TableCell>
+                <TableCell align="right" >Get Employee</TableCell> 
               </TableRow>  
             </TableHead>  
   

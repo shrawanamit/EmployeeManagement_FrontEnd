@@ -1,15 +1,15 @@
 .logincontainer {
   margin: auto;
-  margin-top: 60px;
+  margin-top: 140px;
   align-items: center;
-  height: 320px;
-  align-items: center;
+  height: 100%;
   padding: 20px;
   max-width: 400px;
   grid-gap: 10px;
   box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
   border-radius: 6px;
-  
+  display: 'flex',
+  flexDirection 'column'
 }
 .error{
   color: red;
@@ -103,5 +103,12 @@ input[type=email]:focus, input[type=password]:focus,input[type=text]:focus {
   
   &:focus {
     outline: none;
+  }
+  
+}
+@media screen and (max-width: 600px) {
+  .btn, .link , input[type=email]:focus, input[type=password]:focus,input[type=text]:focus {
+    width: 100%;
+    margin-top: 0;
   }
 }

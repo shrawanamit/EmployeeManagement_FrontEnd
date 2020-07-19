@@ -8,20 +8,25 @@ import TableContainer from '@material-ui/core/TableContainer';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Link } from "react-router-dom";
+import axios from 'axios';
 import "./DashBoard.scss";
 
 export class DashBoard extends React.Component {
-    constructor(props) {
-      super(props);
-     
-    }
+    state ={
+        Eemployee:[],
+    };
+    
+    
 render() 
     {
       return (
         <TableContainer component={Paper}> 
+        <p class="Heading" align="center">
+        <Typography component="h1" variant="h5"> <b>Employee management</b> </Typography>
+        </p>
         <div className="employeebtn">
-        <Link to="/">
-        <Button variant="contained" color="primary"> Add Employee </Button>
+        <Link to="/addEmployee">
+        <Button variant="contained" color="primary" onClick="/addEmployee"> Add Employee </Button>
         </Link>
         </div>
         <p class="title" align="center">
@@ -35,8 +40,19 @@ render()
                 <TableCell align="right" >Last Name</TableCell>  
                 <TableCell align="right" >MobileNo</TableCell>  
                 <TableCell align="right" >Email Id</TableCell>  
-                <TableCell align="right" >Department</TableCell>  
-                <TableCell align="right" >Get Employee</TableCell> 
+                <TableCell align="right" >City</TableCell>
+                <TableCell align="right" >Department</TableCell>
+                <TableCell align="right" >Salary</TableCell>  
+                <TableCell align="right" >
+                    <Link to="/updateEmployee">
+                    <Button variant="contained" color="primary" onClick="/updateEmployee">Update</Button>
+                    </Link>
+                </TableCell> 
+                <TableCell align="right" >
+                    <Link to="/deleteEmployee">
+                    <Button variant="contained" color="primary" onClick="/deleteEmployee">Delete</Button>
+                    </Link>
+                </TableCell> 
               </TableRow>  
             </TableHead>  
   

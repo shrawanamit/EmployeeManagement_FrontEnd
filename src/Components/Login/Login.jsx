@@ -5,9 +5,20 @@ import "./Login.scss";
 import { Link } from '@material-ui/core';
 import { Grid } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
 
 const validEmailRegex = RegExp(/^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$/);
 
+const formValid = errors => {
+    let valid = true;
+  
+    Object.values(errors).forEach(value => {
+      value.length > 0 && (valid = false);
+    });
+  
+    return valid;
+  };
 export class Login extends React.Component {
 
     constructor(props) 
@@ -55,7 +66,6 @@ export class Login extends React.Component {
     {
         const { errors } = this.state;
       return (
-         
         <form className="logincontainer ">
         <p class="title" align="center">
         <Typography component="h1" variant="h5">
@@ -64,6 +74,7 @@ export class Login extends React.Component {
         </p>
           <div className="text">
                 <TextField 
+                 className={errors.EmailId.length > 0 ? "error" : null}
                     name="EmailId" 
                     type="email" 
                     label="Email Id" 
@@ -78,6 +89,7 @@ export class Login extends React.Component {
 
             <div className="text">
                 <TextField 
+                 className={errors.Password.length > 0 ? "error" : null}
                     name="Password" 
                     type="password" 
                     label="Password"
@@ -101,11 +113,10 @@ export class Login extends React.Component {
                 </div>
             </Grid>
 
-            <div className="link">
+            <div className="link" align="center">
             <Link href="/register"  variant="body2">  {"Don't have an account? Register"}</Link>
             </div>
     </form>
-   
         );
     }
 }
